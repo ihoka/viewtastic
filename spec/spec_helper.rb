@@ -6,6 +6,8 @@ rescue LoadError
 end
 
 begin
+  # We use the testing mocks from Authlogic because Viewtastic's "activation" code
+  # is similar to the one Authlogic uses to get access to the controller.
   require 'authlogic/test_case'
 rescue LoadError
   puts "You need to install the authlogic gem in your base app."

@@ -1,6 +1,16 @@
 class Viewtastic::Base
+  include ActionView::Helpers::UrlHelper
+  include ActionView::Helpers::TextHelper
+  include ActionView::Helpers::TagHelper
+  
   class_inheritable_accessor :presented
   self.presented = []
+  
+  delegate :protect_against_forgery?,
+           :request_forgery_protection_token,
+           :form_authenticity_token,
+           :dom_id,
+           :to => :controller
   
   class << self    
     def presents(*types)
@@ -16,6 +26,12 @@ class Viewtastic::Base
     
       attr_accessor *types
       self.presented += types
+      
+      presented.each do |name|
+        define_method("#{name}_dom_id") do |*args|
+          send(:dom_id, send(name), *args)
+        end
+      end
     end
     
     def controller=(value)
@@ -44,7 +60,14 @@ class Viewtastic::Base
   end
   
   def method_missing(method_name, *args, &block)
-    presented_attribute?(method_name) ? delegate_message(method_name, *args, &block) : super
+    if method_name.to_s =~ /_(path|url)$/
+      # Delegate all named routes to the controller
+      controller.send(method_name, *args)
+    elsif presented_attribute?(method_name)
+      delegate_message(method_name, *args, &block)
+    else
+      super
+    end
   end
   
   protected
