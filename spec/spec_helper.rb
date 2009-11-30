@@ -27,6 +27,7 @@ class User < ActiveRecord::Base; end
 
 class UserPresenter < Viewtastic::Base
   presents :user => [ :login ]
+  attr_accessor :foo
 end
 
 Spec::Runner.configure do |config|
