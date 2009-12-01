@@ -19,7 +19,7 @@ begin
     gem.homepage = "http://github.com/ihoka/viewtastic"
     gem.authors = ["Istvan Hoka"]
     
-    gem.files = FileList['lib/**/*.rb', 'LICENSE']
+    gem.files = FileList['lib/**/*.rb', 'LICENSE', 'init.rb']
     gem.test_files = []   
   end
   Jeweler::GemcutterTasks.new
