@@ -24,6 +24,7 @@ A Presenter inherits from `Viewtastic::Base` and should use the `presents` metho
     end
 
 This gives you several 'magic' methods:
+
 * All attributes of comment with the prefix 'comment'. For instance: `comment_body`, `comment_post`, `comment_created_at`.
 * `comment_dom_id` is the same as calling `dom_id(comment)` in a view.
 

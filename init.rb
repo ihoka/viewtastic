@@ -1,1 +1,1 @@
-# Include hook code here
+Rails.configuration.load_paths << "app/presenters"
