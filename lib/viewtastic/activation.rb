@@ -1,7 +1,7 @@
 module Viewtastic
   module Activation
     # Lets Viewtastic know about the controller object via a before filter, AKA "activates" viewtastic.
-    # Borrowed from Viewtastic.
+    # Borrowed from Authlogic.
     #
     def self.included(klass) # :nodoc:
       if defined?(::ApplicationController)
