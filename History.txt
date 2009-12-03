@@ -1,0 +1,5 @@
+0.1.2 - Holy smokes!
+====================
+
+* FIX: properly add "app/presenters" to load_path
+* FIX: Include Viewtastic::Activation in ActionController::Base to activate Viewtastic

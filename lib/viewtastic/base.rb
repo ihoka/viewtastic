@@ -44,7 +44,7 @@ module Viewtastic
       
         presented.each do |name|
           define_method("#{name}_dom_id") do |*args|
-            send(:dom_id, send(name), *args)
+            controller.send(:dom_id, send(name), *args)
           end
         end
       end

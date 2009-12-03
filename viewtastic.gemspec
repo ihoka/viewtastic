@@ -5,24 +5,25 @@
 
 Gem::Specification.new do |s|
   s.name = %q{viewtastic}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Istvan Hoka"]
-  s.date = %q{2009-12-01}
+  s.date = %q{2009-12-03}
   s.email = %q{istvan.hoka@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
      "README.md"
   ]
   s.files = [
-    "LICENSE",
-     "init.rb",
+    "History.txt",
+     "LICENSE",
      "lib/duck_punches/array/each_with_presenter.rb",
      "lib/viewtastic.rb",
      "lib/viewtastic/activation.rb",
      "lib/viewtastic/base.rb",
-     "lib/viewtastic/test_case.rb"
+     "lib/viewtastic/test_case.rb",
+     "rails/init.rb"
   ]
   s.homepage = %q{http://github.com/ihoka/viewtastic}
   s.rdoc_options = ["--charset=UTF-8"]

@@ -1,6 +1,10 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe "Viewtastic activation" do
+  it "is included in the controller" do
+    ActionController::Base.included_modules.should include(Viewtastic::Activation)
+  end
+  
   it "is activated" do
     Viewtastic::Base.should be_activated
     Viewtastic::Base.controller = nil
