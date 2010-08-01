@@ -16,14 +16,14 @@ describe "Viewtastic activation" do
     Viewtastic::Base.controller.should be_nil
     
     thread1 = Thread.new do
-      controller = MockController.new
+      controller = Authlogic::TestCase::MockController.new
       Viewtastic::Base.controller = controller
       Viewtastic::Base.controller.should == controller
     end
     thread1.join
     
     thread2 = Thread.new do
-      controller = MockController.new
+      controller = Authlogic::TestCase::MockController.new
       Viewtastic::Base.controller = controller
       Viewtastic::Base.controller.should == controller
     end

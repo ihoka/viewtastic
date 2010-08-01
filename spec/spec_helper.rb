@@ -31,7 +31,7 @@ class UserPresenter < Viewtastic::Base
 end
 
 Spec::Runner.configure do |config|
-  include Viewtastic::TestCase
+  config.include Viewtastic::TestCase
   
   config.before(:each) do
     activate_viewtastic
