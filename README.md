@@ -1,5 +1,9 @@
 # Viewtastic #
 
+## About this fork
+
+
+This is the viewtastic for Rails 3. Original one, intended for 2.x, can be found [here](http://github.com/ihoka/viewtastic).
 
 ## Installation ##
 
