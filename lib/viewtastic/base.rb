@@ -5,6 +5,8 @@ module Viewtastic
     include ActionView::Helpers::UrlHelper
     include ActionView::Helpers::TextHelper
     include ActionView::Helpers::TagHelper
+    include ActionView::Helpers::NumberHelper
+    include ActionView::Helpers::FormTagHelper
 
     class_inheritable_accessor :presented
     self.presented = []
