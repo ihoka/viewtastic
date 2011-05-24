@@ -1,3 +1,4 @@
 spec/db/viewtastic.sqlite3.db
 spec/debug.log
 pkg
+*.sw?
