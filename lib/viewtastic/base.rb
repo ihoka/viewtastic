@@ -8,7 +8,12 @@ module Viewtastic
     include ActionView::Helpers::NumberHelper
     include ActionView::Helpers::FormTagHelper
 
-    class_inheritable_accessor :presented
+    if Rails::VERSION::MAJOR == 3 && Rails::VERSION::MINOR == 0
+      class_inheritable_accessor :presented
+    else
+      class_attribute :presented
+    end
+
     self.presented = []
 
     delegate :protect_against_forgery?,
