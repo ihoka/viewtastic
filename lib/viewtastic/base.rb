@@ -34,9 +34,7 @@ module Viewtastic
         types_and_attributes.each do |name, delegates|
           attr_accessor name
           presented << name
-          delegates.each do |msg|
-            delegate msg, :to => name
-          end
+          delegate *delegates.push(:to => name)
         end
     
         attr_accessor *types
