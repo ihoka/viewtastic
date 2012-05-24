@@ -13,4 +13,3 @@ module Viewtastic
       end
   end
 end
-ActionController::Base.send(:include, Viewtastic::Activation)
